@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovelForge Atelier</title>
+    <!-- Google Fonts as fallback for Sensorium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Mono&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <style>
+      /* Fallback font naming to match tailwind.config.ts */
+      :root {
+        --font-sans: 'Neue Montreal', 'Inter', sans-serif;
+        --font-serif: 'Editorial New', 'EB Garamond', serif;
+        --font-mono: 'Space Mono', monospace;
+      }
+    </style>
+  </head>
+  <body class="bg-base text-surface selection:bg-accent selection:text-base">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

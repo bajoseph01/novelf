@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@theme {
+  --color-base: #0A0A0A;
+  --color-surface: #F5F5F7;
+  --color-accent: #00FFD1;
+  --shadow-hard: 4px 4px 0px 0px #000;
+  --shadow-hard-hover: 6px 6px 0px 0px #000;
+}
+
+@layer base {
+  body {
+    @apply antialiased overflow-hidden;
+    background-color: var(--color-base);
+    color: var(--color-surface);
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Grain Texture Overlay */
+  body::before {
+    content: "";
+    @apply fixed inset-0 pointer-events-none z-[9999];
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.05em;
+  }
+
+  /* Brutalist Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-base);
+    border-left: 2px solid black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-surface);
+    border: 2px solid black;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent);
+  }
+}
+
+/* Neo-Brutalist Component Styles */
+.neo-border {
+  border: 2px solid black;
+}
+
+.neo-card {
+  background-color: var(--color-surface);
+  color: var(--color-base);
+  border: 2px solid black;
+  box-shadow: var(--shadow-hard);
+  transition: all 0.2s;
+}
+
+.neo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-hover);
+}
+
+.tab-active {
+  background-color: var(--color-surface);
+  color: var(--color-base);
+  border: 2px solid black;
+  border-bottom: none;
+}
+
+.tab-inactive {
+  background-color: var(--color-base);
+  color: var(--color-surface);
+  border: 2px solid transparent;
+}
+
+.tab-inactive:hover {
+  background-color: #18181b;
+}
+
+/* Kinetic Weight Transitions */
+.framer-motion-spring {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
