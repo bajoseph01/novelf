@@ -32,6 +32,32 @@
 
 ---
 
+## 🗓️ Session: December 24, 2025 (The "Tactile Reading" Update)
+
+### 🎯 Objectives Completed
+1.  **3D Page Flip Engine**: Rebuilt the `PreviewStage` using a sophisticated 3D booklet architecture.
+    *   **180-degree Leaf Rotation**: True book-like folding physics.
+    *   **"Peel & Flip" Animation**: Realistic lifting from the bottom-right corner.
+    *   **Shadow Sweep**: Dynamic lighting gradients that move across paper as it turns.
+2.  **Sound Integration**: Integrated a physical page-turn sound effect (`page-flip.mp3`) with a toggleable volume control.
+3.  **UX Fixes**:
+    *   **Centering**: Perfectly centered the book spread on the screen.
+    *   **Navigation**: Activated large side-arrow overlays and click-to-flip page interactivity.
+    *   **Reset Logic**: Switching chapters now correctly resets the reading position to page one.
+    *   **Text Sanitization**: Removed raw markdown artifacts and redundant titles for a clean "published" look.
+
+### 🚧 Current State
+- **Active Branch**: `feature/page-turn-fx` (Ready for merge to `develop`).
+- **Application Status**: The "Preview Room" is now a high-fidelity highlight of the app.
+- **Dependency**: Requires `public/page-flip.mp3` to be present for audio.
+
+### 📝 Next Steps (To-Do)
+- [ ] **Merge**: Bring `feature/page-turn-fx` into `develop` and then `main` to lock in this major UI milestone.
+- [ ] **Structure Stage**: Begin building the interactive "Structure" view (shuffling chapters/scenes).
+- [ ] **Mobile Touch**: Verify swipe gestures for page turns on touch-screens.
+
+---
+
 ## 📜 Historical Context (Project DNA)
 **Project Name**: NovelForge Atelier (NovelF)
 **Core Philosophy**: "The Sensorium Protocol v2.0" - Anti-slop, high-aesthetic, tactile writing tools.
